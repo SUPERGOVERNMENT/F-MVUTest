@@ -14,8 +14,8 @@ type Menu = {
 }
 
 let sample = {
-    Menu.Brand = "Foosburgers"
-    Tagline = "Good food. Great fun."
+    Menu.Brand = "Tweets"
+    Tagline = "Games, Grub, and Greasy Controllers!"
     Items = [
         { MenuItem.Id = 1
           Name = "Foosburger"

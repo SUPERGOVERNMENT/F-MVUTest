@@ -72,6 +72,17 @@ let renderBasketItem (dispatch: Msg -> unit) (item: BasketItem) =
         columns.isVCentered
         prop.children [
           Bulma.column (Html.text lineItem)
+          Bulma.column [
+            column.isNarrow
+            prop.children [
+              Bulma.button.button [
+                button.isSmall
+                color.isLight
+                prop.className "fa fa-minus"
+                prop.onClick (fun _ -> dispatch (RemoveItem item.Id))
+              ]
+            ]
+          ]
         ]
       ]
     )
@@ -88,8 +99,9 @@ let renderBasketItems (dispatch: Msg -> unit) (basket: Basket) =
       ]
       Bulma.block [
         text.hasTextRight
+        text.hasTextWeightBold
         prop.children [
-          Html.text $"{formatPrice subtotal}"
+          Html.text $"Subtotal: {formatPrice subtotal}"
         ]
       ]
     ]
@@ -99,12 +111,12 @@ let renderEmptyBasket () =
       Html.i [
         prop.className "far fa-sad-tear"
       ]
-      Html.text " Nothin' yet."
+      Html.text " Nothin yet."
     ]
 
 let renderBasket (dispatch: Msg -> unit) (basket: Basket) =
   Bulma.block [
-    Bulma.title "Basket"
+    Bulma.title "Trashbag"
     Bulma.subtitle "What you have to look forward to!"
     
     renderBasketItems dispatch basket

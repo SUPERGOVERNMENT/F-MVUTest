@@ -37,5 +37,9 @@ let sample = {
           Name = "Bottled Drink"
           Description = "Drink in, or take it to go."
           Price = 2.99M }
+        { MenuItem.Id = 6
+          Name = "Milkshake"
+          Description = "Frozen Cow Juice & Sugar"
+          Price = 3.55M}
     ]
   }
